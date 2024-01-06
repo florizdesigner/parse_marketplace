@@ -1,0 +1,23 @@
+version: "3"
+services:
+  webhook_nodejs:
+    build: ./
+    image: "node:16"
+    # user: "node"
+    container_name: parser_nodejs
+    working_dir: /home/node/app
+    restart: always
+    environment:
+      - NODE_ENV=production
+    volumes:
+      - ./:/home/node/app
+    ports:
+      - "1234:8082"
+    command: "npm start"
+    networks:
+      - docker-private-network
+
+networks:
+  docker-private-network:
+    name: docker-private-network
+    external: true
