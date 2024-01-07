@@ -1,7 +1,9 @@
 version: "3"
 services:
   parser_nodejs:
-    build: ./
+    build:
+      context: .
+      dockerfile: ./Dockerfile
     image: "node:16"
     # user: "node"
     container_name: parser_nodejs
