@@ -15,7 +15,7 @@ services:
       - ./:/home/node/app
     ports:
       - "1234:8082"
-    command: "npm start"
+    command: "where chromium-browser"
     networks:
       - docker-private-network
 
