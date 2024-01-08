@@ -15,7 +15,7 @@ services:
       - ./:/home/node/app
     ports:
       - "1234:8082"
-    command: "ls -la"
+    command: "npm install"
     networks:
       - docker-private-network
 
